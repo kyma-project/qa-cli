@@ -1,39 +1,38 @@
-> **NOTE:** It is a general template that can be used for a project README.md, example README.md, or any other README.md type in all Kyma repositories in the Kyma organization. Not all the sections are mandatory. Use only those that suit your use case but keep the proposed section order.
+# Kyma QA CLI
 
-# {Project Title} (mandatory)
+## Overview
+The Kyma QA CLI is a command line tool which facilitates quality-related activities for the Kyma developers during the software development life-cycle. It provides a set of commands and flags for:
+* measuring code quality metrics
+* identifying potential problematic code fragments
+* assess compliance with the quality baselines
 
-> Modify the title and insert the name of your project. Use Heading 1 (H1).
-
-## Overview (mandatory)
-
-> Provide a description of the project's functionality.
->
-> If it is an example README.md, describe what the example illustrates.
+It will also provide integration with the Quality Dashboard API and publish the quality metrics for further trend analysis and visualisation.
 
 ## Prerequisites
-
-> List the requirements to run the project or example.
+The tool is a standalone application designed for MacOS and Linux systems.
 
 ## Installation
-
-> Explain the steps to install your project. Create an ordered list for each installation task.
->
-> If it is an example README.md, describe how to build, run locally, and deploy the example. Format the example as code blocks and specify the language, highlighting where possible. Explain how you can validate that the example ran successfully. For example, define the expected output or commands to run which check a successful deployment.
->
-> Add subsections (H3) for better readability.
+The application will be available via Homebrew. 
 
 ## Usage
+Once you have installed the CLI, you can use its commands and flags to run the codebase analysis over the codebase.
 
-> Explain how to use the project. You can create multiple subsections (H3). Include the instructions or provide links to the related documentation.
+For the commands and flags to work, they must follow this syntax:
+
+```sh
+kyma-qa {COMMAND} {FLAGS}
+```
+
+* **{COMMAND}** specifies the operation to be performed, such as test coverage assessment, etc.
+* **{FLAGS}** specifies optional flags you can use to enrich your command.
 
 ## Development
+### Build from Sources
 
-> Add instructions on how to develop the project or example. It must be clear what to do and, for example, how to trigger the tests so that other contributors know how to make their pull requests acceptable. Include the instructions or provide links to related documentation.
+Alternatively, you can also build the Kyma CLI from the sources:
 
-## Troubleshooting
-
-> List potential issues and provide tips on how to avoid or solve them. To structure the content, use the following sections:
->
-> - **Symptom**
-> - **Cause**
-> - **Remedy**
+To clone the Kyma CLI repository, run:
+```sh
+mkdir -p $GOPATH/src/github.com/kyma-project/
+git clone git@github.com:kyma-project/qa-cli.git $GOPATH/src/github.com/kyma-project/
+```
